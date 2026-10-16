@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="save.css">
+    <script src="save.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="head">
+        <h1>To do list</h1>
+        <p class="date" id="today"></p>
+      </header>
+
+      <form class="add" id="addForm">
+        <label class="sr-only" for="taskInput">New task</label>
+        <input id="taskInput" placeholder="Enter a task" autocomplete="off" maxlength="200">
+        <button id="addTaskButton" type="submit">Add task</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button type="button" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+
+      <h2 class="sr-only">Tasks</h2>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty" hidden></p>
+
+      <footer class="summary">
+        <span id="count"></span>
+        <button type="button" id="clearDone" hidden>Clear completed</button>
+      </footer>
+    </main>
+  </body>
+</html>
